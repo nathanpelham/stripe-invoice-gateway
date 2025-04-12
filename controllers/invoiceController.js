@@ -1,28 +1,27 @@
 const { getInvoiceByNumber } = require('../services/serviceFusion');
 
 const lookupInvoice = async (req, res) => {
-  const { invoiceNumber, invoiceAmount } = req.body;
+    const { invoiceNumber, invoiceAmount } = req.body; // Extract data from the body
 
-  try {
-    const invoice = await getInvoiceByNumber(invoiceNumber);
+    try {
+        // Retrieve the invoice by number from Service Fusion
+        const invoice = await getInvoiceByNumber(invoiceNumber);
 
-    // Compare amount
-    if (parseFloat(invoice.balance_due) !== parseFloat(invoiceAmount)) {
-      return res.status(400).send('Invoice amount does not match.');
+        // Compare the provided amount with the invoice's balance due
+        if (parseFloat(invoice.balance_due) !== parseFloat(invoiceAmount)) {
+            return res.status(400).send('Invoice amount does not match.');
+        }
+
+        // If invoice and amount match, return the invoice data
+        res.json({
+            message: 'Invoice validated ✅',
+            invoice
+        });
+
+    } catch (error) {
+        console.error(error);
+        res.status(404).send('Invoice not found or error occurred.');
     }
-
-    // For now, just return invoice data as JSON
-    res.json({
-      message: 'Invoice validated ✅',
-      invoice
-    });
-
-  } catch (error) {
-    console.error(error);
-    res.status(404).send('Invoice not found or error occurred.');
-  }
 };
 
-module.exports = {
-  lookupInvoice
-};
+module.exports = { lookupInvoice };
