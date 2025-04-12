@@ -1,31 +1,4 @@
 {
-HEAD
-  "name": "stripe-invoice-gateway",
-  "version": "1.0.0",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nathanpelham/stripe-invoice-gateway.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/nathanpelham/stripe-invoice-gateway/issues"
-  },
-  "homepage": "https://github.com/nathanpelham/stripe-invoice-gateway#readme",
-  "description": "",
-  "dependencies": {
-    "axios": "^1.8.4",
-    "dotenv": "^16.5.0",
-    "express": "^5.1.0",
-    "nodemailer": "^6.10.0",
-    "stripe": "^18.0.0"
-  }
     "name": "stripe-invoice-gateway",
     "version": "1.0.0",
     "main": "server.js",
@@ -44,14 +17,7 @@ HEAD
         "url": "https://github.com/nathanpelham/stripe-invoice-gateway/issues"
     },
     "homepage": "https://github.com/nathanpelham/stripe-invoice-gateway#readme",
-    "description": "",
     "dependencies": {
-        "express": "5.1.0"
-    },
-    "engines": {
-        "node": "16.x"
+        "express": "^4.17.1"
     }
-
- feature/test-push
 }
-
