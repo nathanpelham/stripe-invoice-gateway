@@ -1,5 +1,5 @@
 {
-<<<<<<< HEAD
+HEAD
   "name": "stripe-invoice-gateway",
   "version": "1.0.0",
   "main": "server.js",
@@ -26,7 +26,6 @@
     "nodemailer": "^6.10.0",
     "stripe": "^18.0.0"
   }
-=======
     "name": "stripe-invoice-gateway",
     "version": "1.0.0",
     "main": "server.js",
